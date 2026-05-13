@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FirebaseService } from '../shared/services/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,9 @@ export class Home {
   progress = 80;
   isAnimating = false;
 
-  pulse() {
+  constructor(private firebaseService: FirebaseService) {}
+
+  async pulse() {
     // evita múltiples clicks
     if (this.isAnimating) return;
 
@@ -19,7 +22,7 @@ export class Home {
 
     // sube SOLO a 81
     this.progress = 81;
-
+    await this.firebaseService.updateAction();
     // termina animación
     setTimeout(() => {
       this.isAnimating = false;
