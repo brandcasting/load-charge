@@ -22,10 +22,7 @@ export class Home {
 
     // termina animación
     setTimeout(() => {
-      // vuelve a 80
-      this.progress = 80;
-
       this.isAnimating = false;
-    }, 1200);
+    }, 1000);
   }
 }
