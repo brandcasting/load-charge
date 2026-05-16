@@ -1,26 +1,39 @@
 <!-- charging.component.html -->
-<div class="relative w-screen h-screen overflow-hidden bg-black flex items-center justify-center">
+<div class="relative w-screen h-screen overflow-hidden flex items-center justify-center">
   <!-- Fondo animado -->
-  <div class="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#050816] to-black"></div>
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url('/FONDO.png')"
+  ></div>
+  <!-- <div
+    class="absolute inset-0 bg-gradient-to-b from-[#020617]/70 via-[#050816]/60 to-black/95"
+  ></div> -->
 
   <!-- Glow -->
-  <div
+  <!-- <div
     class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-500/10 blur-3xl rounded-full"
-  ></div>
+  ></div -->>
 
   <!-- Contenido -->
+  <div class="absolute top-0 left-0 right-0 z-20 px-6 py-5">
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
+      <img src="/TRAILSEEKER.png" alt="Trailseeker" class="h-12 w-auto object-contain" />
+      <img src="/LOGO%20SUBARU.png" alt="Subaru logo" class="h-12 w-auto object-contain" />
+    </div>
+  </div>
+
   <div
     class="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-6"
   >
     <!-- Título -->
-    <p class="text-white/70 uppercase tracking-[8px] text-sm mb-10">Experiencia Subaru</p>
+    <!-- <p class="text-white/70 uppercase tracking-[8px] text-sm mb-10">Experiencia Subaru</p> -->
 
-    <h1 class="text-white font-bold text-5xl md:text-7xl leading-tight">
+    <!-- <h1 class="text-white font-bold text-5xl md:text-7xl leading-tight">
       Cargando <br />
       Experiencia
-    </h1>
+    </h1> -->
 
-    <p class="mt-6 text-gray-400 text-lg md:text-2xl">Conectando con el futuro</p>
+    <!-- <p class="mt-6 text-gray-400 text-lg md:text-2xl">Conectando con el futuro</p> -->
 
     <!-- Botón central -->
     <button
@@ -28,7 +41,7 @@
       class="relative mt-20 flex items-center justify-center w-56 h-56 rounded-full active:scale-95 transition-transform duration-200"
     >
       <!-- Aura -->
-      <span class="absolute w-56 h-56 rounded-full bg-blue-500/20"></span>
+      <!-- <span class="absolute w-56 h-56 rounded-full bg-blue-500/20"></span> -->
 
       <!-- Glow -->
       <span class="absolute w-48 h-48 rounded-full bg-blue-500/10 blur-2xl"></span>
@@ -40,7 +53,8 @@
       ></span>
 
       <!-- Centro -->
-      <span
+      <img src="/RAYO.png" alt="Ícono de carga" width="150" height="150" />
+      <!-- <span
         class="relative flex items-center justify-center w-28 h-28 rounded-full bg-blue-500 shadow-[0_0_60px_#3b82f6]"
       >
         <svg
@@ -53,12 +67,20 @@
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
-      </span>
+      </span> -->
     </button>
+
+    <div class="mt-6 flex flex-col items-center">
+      <p
+        class="text-white text-4xl font-bold tracking-[8px] drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]"
+      >
+        CARGANDO
+      </p>
+    </div>
 
     <!-- Barra -->
     <div class="w-full max-w-3xl mt-24">
-      <div class="relative h-10 rounded-xl border border-blue-400/30 bg-[#071020] overflow-hidden">
+      <div class="relative h-10 rounded-xl border border-cyan-300 bg-[#071020] overflow-hidden">
         <!-- Aura tipo botón -->
         <!-- <div
           *ngIf="isAnimating"
@@ -82,10 +104,6 @@
             class="absolute top-0 left-0 h-full w-32 bg-white/20 blur-xl animate-shine"
           ></div>
         </div>
-      </div>
-
-      <div class="mt-6 flex flex-col items-center">
-        <p class="text-white tracking-[6px] text-sm">CARGANDO</p>
       </div>
     </div>
   </div>
