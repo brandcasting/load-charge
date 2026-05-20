@@ -32,7 +32,7 @@ export class Home {
     ringEl.classList.add('animate-spin-slow');
     auraEl.classList.add('animate-aura');
 
-    this.progress += 2;
+    this.progress = this.progress >= 82 ? 82 : this.progress + 2;
 
     await this.firebaseService.updateAction();
   }
