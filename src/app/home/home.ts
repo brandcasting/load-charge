@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FirebaseService } from '../shared/services/firebase.service';
 
 @Component({
@@ -10,22 +10,30 @@ import { FirebaseService } from '../shared/services/firebase.service';
 })
 export class Home {
   progress = 80;
-  isAnimating = false;
+
+  @ViewChild('ring') ring!: ElementRef<HTMLSpanElement>;
+  @ViewChild('aura') aura!: ElementRef<HTMLSpanElement>;
 
   constructor(private firebaseService: FirebaseService) {}
 
   async pulse() {
-    // evita múltiples clicks
-    if (this.isAnimating) return;
+    const ringEl = this.ring.nativeElement;
+    const auraEl = this.aura.nativeElement;
 
-    this.isAnimating = true;
+    // quitar clases
+    ringEl.classList.remove('animate-spin-slow');
+    auraEl.classList.remove('animate-aura');
 
-    // sube SOLO a 81
-    this.progress = 81;
+    // FORZAR REFLOW
+    void ringEl.offsetWidth;
+    void auraEl.offsetWidth;
+
+    // volver a agregar
+    ringEl.classList.add('animate-spin-slow');
+    auraEl.classList.add('animate-aura');
+
+    this.progress += 2;
+
     await this.firebaseService.updateAction();
-    // termina animación
-    setTimeout(() => {
-      this.isAnimating = false;
-    }, 1000);
   }
 }

@@ -41,14 +41,14 @@
       class="relative mt-20 flex items-center justify-center w-56 h-56 rounded-full active:scale-95 transition-transform duration-200"
     >
       <!-- Aura -->
-      <!-- <span class="absolute w-56 h-56 rounded-full bg-blue-500/20"></span> -->
+      <span #aura class="absolute w-46 h-46 rounded-full bg-blue-500/20"></span>
 
       <!-- Glow -->
       <span class="absolute w-48 h-48 rounded-full bg-blue-500/10 blur-2xl"></span>
 
       <!-- Ring -->
       <span
-        [class.animate-spin-slow]="isAnimating"
+        #ring
         class="absolute w-44 h-44 rounded-full border-[6px] border-blue-400 border-t-transparent shadow-[0_0_40px_#3b82f6]"
       ></span>
 
@@ -99,10 +99,10 @@
           [style.width.%]="progress"
         >
           <!-- Shine -->
-          <div
+          <!-- <div
             *ngIf="isAnimating"
             class="absolute top-0 left-0 h-full w-32 bg-white/20 blur-xl animate-shine"
-          ></div>
+          ></div> -->
         </div>
       </div>
     </div>
