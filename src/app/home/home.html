@@ -1,5 +1,5 @@
 <!-- charging.component.html -->
-<div class="relative w-screen h-screen overflow-hidden flex items-center justify-center">
+<div class="relative w-screen h-screen overflow-hidden flex items-center justify-center touch-none">
   <!-- Fondo animado -->
   <div
     class="absolute inset-0 bg-cover bg-center"
@@ -38,7 +38,7 @@
     <!-- Botón central -->
     <button
       (click)="pulse()"
-      class="relative mt-20 flex items-center justify-center w-56 h-56 rounded-full active:scale-95 transition-transform duration-200"
+      class="relative mt-20 flex items-center justify-center w-56 h-56 rounded-full active:scale-95 transition-transform duration-200 touch-manipulation"
     >
       <!-- Aura -->
       <span #aura class="absolute w-46 h-46 rounded-full bg-blue-500/20"></span>
