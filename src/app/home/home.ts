@@ -9,7 +9,7 @@ import { FirebaseService } from '../shared/services/firebase.service';
   styleUrl: './home.scss',
 })
 export class Home {
-  progress = 80;
+  progress = 15;
 
   @ViewChild('ring') ring!: ElementRef<HTMLSpanElement>;
   @ViewChild('aura') aura!: ElementRef<HTMLSpanElement>;
